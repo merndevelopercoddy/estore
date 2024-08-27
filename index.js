@@ -20,7 +20,7 @@ async function start() {
     try {
         await mongoose.connect(URL);
         app.listen(PORT, () => {
-            console.log(`Server ${PORT} portda ishladi`);
+            console.log(`Server ${PORT} portda ishladi , tekshirildi`);
         });
     } catch (error) {
         console.log(error)
