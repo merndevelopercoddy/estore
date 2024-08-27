@@ -1,0 +1,26 @@
+    <form action="/admin/product/edit" method="post" enctype="multipart/form-data">
+<div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Image</label>
+        <input type="hidden" value="{{product.image}}" name="eskirasm">
+        <input value="{{product.image}}" name="image" type="file" class="form-control" id="exampleInputImage"
+            aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">Name</label>
+        <input value="{{product.name}}" name="name" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Price</label>
+        <input value="{{product.price}}" name="price" type="number" min="0" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+    <input name="id" type="hidden" value="{{product._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/product/delete" method="post">
+    <input name="id" type="hidden" value="{{product._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

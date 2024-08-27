@@ -1,0 +1,35 @@
+<form action="/admin/slider/edit" method="post" enctype="multipart/form-data">
+
+    {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{slider.comment}}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Image</label>
+        <input type="hidden" value="{{slider.image}}" name="eskirasm">
+        <input value="{{slider.image}}" name="image" type="file" class="form-control" id="exampleInputImage"
+            aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">name</label>
+        <input value="{{slider.name}}" name="name" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">job</label>
+        <input value="{{slider.job}}" name="job" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <input name="id" type="hidden" value="{{slider._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/slider/delete" method="post">
+    <input name="id" type="hidden" value="{{slider._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

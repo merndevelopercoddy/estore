@@ -1,0 +1,89 @@
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+	<div class="container">
+		<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+			aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsFurni">
+			<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+				{{#if menu.length}}
+					{{#each menu}}
+						{{#if activeHome}}
+							<li class="nav-item active">
+								<a class="nav-link active" href="{{url}}">{{name}}</a>
+							</li>
+						{{else}}
+							<li class="nav-item active">
+								<a class="nav-link active" href="{{url}}">{{name}}</a>
+							</li>
+						{{/if}}
+					{{/each}}
+				{{else}}
+					{{#if activeHome}}
+						<li class="nav-item active">
+							<a class="nav-link active" href="/">Home</a>
+						</li>
+					{{else}}
+						<li><a class="nav-link" href="/">Home</a></li>
+					{{/if}}
+					{{#if activeShop}}
+						<li class="nav-item active">
+							<a class="nav-link active" href="/shop">Shop</a>
+						</li>
+					{{else}}
+						<li><a class="nav-link" href="/shop">Shop</a></li>
+					{{/if}}
+					{{#if activeAbout}}
+						<li class="nav-item active">
+							<a class="nav-link active" href="/about">About</a>
+						</li>
+					{{else}}
+						<li><a class="nav-link" href="/about">About</a></li>
+					{{/if}}
+					{{#if activeServices}}
+						<li class="nav-item active">
+							<a class="nav-link active" href="/services">Services</a>
+						</li>
+					{{else}}
+						<li><a class="nav-link" href="/services">Services</a></li>
+					{{/if}}
+
+					{{#if activeBlog}}
+						<li class="nav-item active">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+					{{else}}
+						<li><a class="nav-link" href="/blog">Blog</a></li>
+					{{/if}}
+
+					{{#if activeContact}}
+						<li class="nav-item active">
+							<a class="nav-link active" href="/contact">Contact</a>
+						</li>
+					{{else}}
+						<li><a class="nav-link " href="/contact">Contact</a></li>
+					{{/if}}
+				{{/if}}
+
+
+				{{!-- <li><a class="nav-link" href="/shop">Shop</a></li>
+				<li><a class="nav-link" href="/about">About us</a></li>
+				<li><a class="nav-link" href="/services">Services</a></li>
+				<li><a class="nav-link" href="/blog">Blog</a></li>
+				<li><a class="nav-link" href="/contact">Contact us</a></li> --}}
+			</ul>
+
+			<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+				<li><a class="nav-link" href="#"><img src="assets/images/user.svg"></a></li>
+				<li><a class="nav-link" href="/cart"><img src="assets/images/cart.svg"></a></li>
+			</ul>
+		</div>
+	</div>
+
+</nav>
+<!-- End Header/Navigation -->

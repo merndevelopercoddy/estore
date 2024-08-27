@@ -1,0 +1,56 @@
+{{#if info.length}}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Button name</th>
+            <th scope="col">Button address</th>
+            <th scope="col">Edit</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each info}}
+        <tr>
+            <th scope="row">{{incr @index}}</th>
+            <td>{{{title}}}</td>
+            <td>{{{comment}}}</td>
+            <td>{{{buttonname}}}</td>
+            <td>{{buttonaddress}}</td>
+            <td><a href="/admin/info/{{id}}" class="btn btn-success">Edit</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<form action="/admin/info/add" method="post">
+    </div> {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail5" class="form-label">Title</label>
+        <input name="title" type="text" class="form-control" id="exampleInputEmail5" aria-describedby="emailHelp"
+            required>
+    </div>
+    {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required></textarea>
+
+        {{!-- tugma nomi --}}
+        <div class="mb-3">
+            <label for="exampleInputEmail3" class="form-label">Button name</label>
+            <input name="buttonname" type="text" class="form-control" id="exampleInputEmail3"
+                aria-describedby="emailHelp" required>
+        </div>
+        {{!-- tugma manzili --}}
+        <div class="mb-3">
+            <label for="exampleInputEmail4" class="form-label">Button address</label>
+            <input name="buttonaddress" type="text" class="form-control" id="exampleInputEmail4"
+                aria-describedby="emailHelp" required>
+        </div>
+        <button type="submit" class="btn btn-primary">save</button>
+</form>
+{{/if}}

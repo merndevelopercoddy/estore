@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto">
+      <h2 class="text-center">Menyu qo'shish</h2>
+      <form action="/admin/menu/add" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Menyu nomi</label>
+          <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            required />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail2" class="form-label">Menyu URL</label>
+          <input name="url" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+            required />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Sahifa</label>
+          <select name="sahifa" id="" required>
+            <option selected disabled>Sahifani tanlang</option>
+            {{#each faylname}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <input type="submit" value="Saqlash" class="btn btn-primary my-3">
+      </form>
+    </div>
+  </div>
+</div>
+{{#if menu.length}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">url</th>
+      <th scope="col">Sahifa</th>
+      <th scope="col">Edit</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each menu}}
+    <tr>
+      <th scope="row">{{incr @index}}</th>
+      <td>{{{name}}}</td>
+      <td>{{{url}}}</td>
+      <td>{{{sahifa}}}</td>
+      <td><a href="/admin/menu/{{id}}" class="btn btn-success">Edit</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+qushilmagan
+{{/if}}

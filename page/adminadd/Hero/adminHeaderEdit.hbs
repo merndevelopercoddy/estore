@@ -1,0 +1,45 @@
+    <form action="/admin/hero/edit" method="post" enctype="multipart/form-data">
+    {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{hero.comment}}</textarea>
+    </div>
+    {{!-- tugma nomi --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Button name</label>
+        <input value="{{hero.buttonname}}" name="buttonname" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+        {{!-- tugma manzili --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">Button address</label>
+        <input value="{{hero.buttonaddress}}" name="buttonaddress" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+    {{!-- tugma manzili2 --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">Button address2</label>
+        <input value="{{hero.buttonaddress2}}" name="buttonaddress2" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+        {{!-- tugma nomi2 --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Button name2</label>
+        <input value="{{hero.buttonname2}}" name="buttonname2" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Image</label>
+        <input type="hidden" value="{{hero.image}}" name="eskirasm">
+        <input value="{{hero.image}}" name="image" type="file" class="form-control" id="exampleInputImage"
+            aria-describedby="emailHelp">
+    </div>
+    <input name="id" type="hidden" value="{{hero._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/hero/delete" method="post">
+    <input name="id" type="hidden" value="{{hero._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

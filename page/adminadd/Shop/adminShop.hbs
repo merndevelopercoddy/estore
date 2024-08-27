@@ -1,0 +1,57 @@
+<form action="/admin/shop/add" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="fileInput" class="form-label">Image</label>
+        <input type="file" id="fileInput" name="image" accept="image/*" onchange="validateImageFile(this)" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"
+            required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Price</label>
+        <input name="price" type="number" min="0" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"
+            required>
+    </div>
+    <button type="submit" class="btn btn-primary">save</button>
+</form>
+{{#if shop.length}}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each shop}}
+        <tr>
+            <th scope="row">{{incr @index}}</th>
+            <td><img style="width: 100px; height: 100px;" src="../../../images/shop/{{image}}" alt=""></td>
+            <td>{{{name}}}</td>
+            <td>{{{price}}}</td>
+            <td><a href="/admin/shop/{{id}}" class="btn btn-success">Edit</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+malumot yo'q
+{{/if}}
+<script>
+    function validateImageFile(input) {
+        const file = input.files[0];
+        console.log(file)
+        const allowedTypes = /(\.|\/)(gif|jpe?g|png)$/i;
+
+        if (!allowedTypes.test(file.type)) {
+            alert("Bu fayl rasm emas (gif, jpg, jpeg, png) shu formatda bo'lsin .");
+            input.value - '';
+        }
+    }
+</script>

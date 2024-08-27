@@ -1,0 +1,27 @@
+    <form action="/admin/blog/edit" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">blogname</label>
+        <input value="{{blog.blogname}}" name="blogname" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+    
+    {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="summernote" class="form-label">name</label>
+        <textarea name="name" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{blog.name}}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Image</label>
+        <input type="hidden" value="{{blog.image}}" name="eskirasm">
+        <input value="{{blog.image}}" name="image" type="file" class="form-control" id="exampleInputImage"
+            aria-describedby="emailHelp">
+    </div>
+    <input name="id" type="hidden" value="{{blog._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/blog/delete" method="post">
+    <input name="id" type="hidden" value="{{blog._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

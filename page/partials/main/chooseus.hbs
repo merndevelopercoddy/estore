@@ -1,0 +1,100 @@
+<!-- Start Why Choose Us Section -->
+<div class="why-choose-section">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-6">
+				{{#if why.length}}
+				{{#each why}}
+				<h2 class="section-title">{{title}}</h2>
+				<p>{{{comment}}}</p>
+				{{/each}}
+				{{else}}
+				<h2 class="section-title">Why Choose Us</h2>
+				<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
+					imperdiet dolor tempor tristique.</p>
+				{{/if}}
+
+				
+					{{#if services.length}}
+					<div class="row my-5 col-lg-6">
+					{{#each services}}
+
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<i class="ri-{{icon}}" style="color:{{color}}; font-size:40px;" class=" imf-fluid"></i>
+							</div>
+							<h3>{{title}}</h3>
+							<p>{{{comment}}}</p>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+				{{else}}
+				<div class="row my-5">
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="assets/images/truck.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Fast &amp; Free Shipping</h3>
+							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="assets/images/bag.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Easy to Shop</h3>
+							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="assets/images/support.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>24/7 Support</h3>
+							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="assets/images/return.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Hassle Free Returns</h3>
+							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.
+							</p>
+						</div>
+					</div>
+
+				</div>
+				{{/if}}
+			</div>
+			{{#if why.length}}
+			{{#each why}}
+			<div class="col-lg-5">
+				<div class="img-wrap">
+					<img src="../../../images/why/{{image}}" alt="Image" class="img-fluid">
+				</div>
+			</div>
+			{{/each}}
+			{{else}}
+			<div class="col-lg-5">
+				<div class="img-wrap">
+					<img src="assets/images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
+				</div>
+			</div>
+			{{/if}}
+		</div>
+	</div>
+</div>
+<!-- End Why Choose Us Section -->

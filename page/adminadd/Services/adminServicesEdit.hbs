@@ -1,0 +1,39 @@
+<form action="/admin/services/edit" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Icon</label>
+        <input value="{{services.icon}}" name="icon" type="text" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{services.comment}}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">Title</label>
+        <input value="{{services.title}}" name="title" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail5" class="form-label">Color</label>
+        <input value="{{services.color}}" name="color" type="color" class="form-control" id="exampleInputEmail5"
+            aria-describedby="emailHelp" required>
+    </div>
+    <input name="id" type="hidden" value="{{services._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/services/delete" method="post">
+    <input name="id" type="hidden" value="{{services._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>
+<div class="container">
+    <div class="row">
+        {{#each ikonka_nomi}}
+        <div class="col-lg-3">
+            <p styLe="font-size: 20px;">
+                <i class="ri-{{this}}">{{this}}</i>
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>

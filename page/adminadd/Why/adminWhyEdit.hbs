@@ -1,0 +1,26 @@
+    <form action="/admin/why/edit" method="post" enctype="multipart/form-data">
+<div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Image</label>
+        <input type="hidden" value="{{why.image}}" name="eskirasm">
+        <input value="{{why.image}}" name="image" type="file" class="form-control" id="exampleInputImage"
+            aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">Title</label>
+        <input value="{{why.title}}" name="title" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{hero.comment}}</textarea>
+    </div>
+    <input name="id" type="hidden" value="{{why._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/why/delete" method="post">
+    <input name="id" type="hidden" value="{{why._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

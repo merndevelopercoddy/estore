@@ -1,0 +1,75 @@
+{{#if (katta services.length)}}
+Boshqa qiymat qo'shib bo'lmaydi
+{{else}}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6  mx-auto  shadow p-3 mb-4 rounded">
+            <form action="/admin/services/add" method="post">
+                <h2 class="text-center">services add</h2>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmaill1" class="form-label">Icon</label>
+                    <input name="icon" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" required />
+                </div>
+                <div class="mb-3">
+                    <label for="summernote" class="form-label">Comment</label>
+                    <textarea name="comment" type="text" class="form-control" id="summernote"
+                        aria-describedby="emailHelp" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmaill3" class="form-label">Title</label>
+                    <input name="title" type="text" class="form-control" id="exampleInputEmail3"
+                        aria-describedby="emailHelp" required />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmaill4" class="form-label">Color</label>
+                    <input name="color" type="color" class="form-control" id="exampleInputEmail4"
+                        aria-describedby="emailHelp" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{/if}}
+{{#if services.length}}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Address</th>
+            <th scope="col">Title</th>
+            <th scope="col">Color</th>
+            <th scope="col">Edit</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each services}}
+        <tr>
+            <th scope="row">{{incr @index}}</th>
+            <td>{{{icon}}}</td>
+            <td>{{{comment}}}</td>
+            <td>{{{title}}}</td>
+            <td>{{{color}}}</td>
+            <td><a href="/admin/services/{{id}}" class="btn btn-success">Edit</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+qushilmagan
+{{/if}}
+<div class="container">
+    <div class="row">
+        {{#each ikonka_nomi}}
+        <div class="col-lg-3">
+            <p styLe="font-size: 20px;">
+                <i class="ri-{{this}}">{{this}}</i>
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>

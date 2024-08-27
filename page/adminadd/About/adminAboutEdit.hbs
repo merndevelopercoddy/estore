@@ -1,0 +1,39 @@
+    <form action="/admin/about/edit" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">job</label>
+        <input value="{{about.job}}" name="title" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+    
+    {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{about.comment}}</textarea>
+    </div>
+    
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">name</label>
+        <input value="{{about.name}}" name="name" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">nameurl</label>
+        <input value="{{about.nameurl}}" name="nameurl" type="text" class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Image</label>
+        <input type="hidden" value="{{about.image}}" name="eskirasm">
+        <input value="{{about.image}}" name="image" type="file" class="form-control" id="exampleInputImage"
+            aria-describedby="emailHelp">
+    </div>
+    <input name="id" type="hidden" value="{{about._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/about/delete" method="post">
+    <input name="id" type="hidden" value="{{about._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

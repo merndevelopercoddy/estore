@@ -1,0 +1,30 @@
+<form action="/admin/menu/edit" method="post">
+  {{!-- sarlavha --}}
+  <div class="mb-3">
+    <label for="exampleInputEmail3" class="form-label">name</label>
+    <input value="{{menu.name}}" name="name" type="text" class="form-control" id="exampleInputEmail3"
+      aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail4" class="form-label">url</label>
+    <input value="{{menu.url}}" name="url" type="text" class="form-control" id="exampleInputEmail4"
+      aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Sahifa</label>
+    <select name="sahifa" id="">
+      <option selected disabled>Sahifani tanlang</option>
+      {{#each faylname}}
+      <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <input name="id" type="hidden" value="{{menu._id}}">
+  <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/menu/delete" method="post">
+  <input name="id" type="hidden" value="{{menu._id}}">
+  <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>

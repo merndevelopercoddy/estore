@@ -1,0 +1,32 @@
+<form action="/admin/info/edit" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Title</label>
+        <input value="{{info.title}}" name="title" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+
+    {{!-- izoh --}}
+    <div class="mb-3">
+        <label for="summernote" class="form-label">Comment</label>
+        <textarea name="comment" type="text" class="form-control" id="summernote" aria-describedby="emailHelp"
+            required>{{info.comment}}</textarea>
+    </div>
+    {{!-- tugma nomi --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Button name</label>
+        <input value="{{info.buttonname}}" name="buttonname" type="text" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp" required>
+    </div>
+    {{!-- tugma manzili --}}
+    <div class="mb-3">
+        <label for="exampleInputEmail4" class="form-label">Button address</label>
+        <input value="{{info.buttonaddress}}" name="buttonaddress" type="text" class="form-control"
+            id="exampleInputEmail4" aria-describedby="emailHelp" required>
+    </div>
+    <input name="id" type="hidden" value="{{info._id}}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+<form action="/admin/info/delete" method="post">
+    <input name="id" type="hidden" value="{{info._id}}">
+    <td><button class="btn btn-danger my-4">Delete</button></td>
+</form>
